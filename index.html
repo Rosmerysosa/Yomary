@@ -95,29 +95,29 @@
 
       var resultado;
 
-        if (isNaN(num1) || isNaN(num2)) {
-            resultado = "Por favor, introduzca números válidos.";
-        } else {
-            if (signo === '+') {
+        switch(signo) {
+            case '+':
                 resultado = num1 + num2;
-            } else if (signo === '-') {
+                break;
+            case '-':
                 resultado = num1 - num2;
-            } else if (signo === '*') {
+                break;
+            case '*':
                 resultado = num1 * num2;
-            } else if (signo === '/') {
+                break;
+            case '/':
                 if (num2 !== 0) {
                     resultado = num1 / num2;
                 } else {
                     resultado = "Error: División por cero";
                 }
-            } else {
+                break;
+            default:
                 resultado = "Operador no válido";
-            }
         }
 
         document.getElementById('resultado').innerText = resultado;
-    
-
+    }
 
   </script>
 </body>
