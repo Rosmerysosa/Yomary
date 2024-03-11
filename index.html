@@ -95,24 +95,28 @@
 
       var resultado;
 
-        if (signo === '+') {
-            resultado = num1 + num2;
-        } else if (signo === '-') {
-            resultado = num1 - num2;
-        } else if (signo === '*') {
-            resultado = num1 * num2;
-        } else if (signo === '/') {
-            if (num2 !== 0) {
-                resultado = num1 / num2;
-            } else {
-                resultado = "Error: División por cero";
-            }
+        if (isNaN(num1) || isNaN(num2)) {
+            resultado = "Por favor, introduzca números válidos.";
         } else {
-            resultado = "Operador no válido";
+            if (signo === '+') {
+                resultado = num1 + num2;
+            } else if (signo === '-') {
+                resultado = num1 - num2;
+            } else if (signo === '*') {
+                resultado = num1 * num2;
+            } else if (signo === '/') {
+                if (num2 !== 0) {
+                    resultado = num1 / num2;
+                } else {
+                    resultado = "Error: División por cero";
+                }
+            } else {
+                resultado = "Operador no válido";
+            }
         }
 
         document.getElementById('resultado').innerText = resultado;
-    }
+    
 
 
   </script>
